@@ -16,17 +16,12 @@ class ViewController: UIViewController {
     var sencendval:Double = 0 //shuzizifu
     var fhval:Int = 0    //fuhao
     var isfinash:Bool = false    //判断文本框是否为空
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     @IBAction func setnum(_ sender: UIButton) {/*数字*/
         let a = sender.currentTitle
         if(resulttxt.text! != "0" && isfinash == false){
@@ -36,7 +31,6 @@ class ViewController: UIViewController {
             isfinash = false
         }
     }
-
     @IBAction func setSign(_ sender: UIButton) {/*符号*/
         if(fristval == 0){
             fristval = Double(resulttxt.text!)!
@@ -46,11 +40,8 @@ class ViewController: UIViewController {
         fhval = sender.tag
         isfinash = true
     }
-    
-    
     @IBAction func onCCT(_ sender: Any) {/*计算*/
         if  fhval != 0 {
-//            sencendval = (resulttxt.text! as NSString).doubleValue
             sencendval = Double(resulttxt.text!)!
             switch (fhval){
             case 1:
@@ -88,13 +79,11 @@ class ViewController: UIViewController {
             isfinash = true
         }
     }
-    
     @IBAction func setPoit(_ sender: Any) {/*判断点*/
         if(!resulttxt.text!.contains(".") && isfinash == false){
             resulttxt.text! += "."
         }
     }
-    
     @IBAction func reset(_ sender: Any) {/*清除*/
         resulttxt.text = "0"
         fristval = 0
